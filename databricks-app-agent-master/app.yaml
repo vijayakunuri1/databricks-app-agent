@@ -1,0 +1,23 @@
+command:
+  - uvicorn
+  - app:app
+  - --host
+  - "0.0.0.0"
+  - --port
+  - "8000"
+  - --workers
+  - "2"
+
+env:
+  - name: ENVIRONMENT
+    value: "development"
+  - name: LOG_LEVEL
+    value: "info"
+  - name: APP_VERSION
+    value: "1.0.0"
+
+  - name: DATABRICKS_WAREHOUSE_ID
+    value: "9bce7c2e69ef5c09"
+
+  - name: UC_CATALOG_NAME
+    value: "main"

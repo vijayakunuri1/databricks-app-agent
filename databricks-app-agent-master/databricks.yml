@@ -1,0 +1,51 @@
+bundle:
+  name: chat-box-akunuri
+
+variables:
+  warehouse_id:
+    description: "SQL Warehouse ID to bind to the app"
+  catalog_name:
+    description: "Default Unity Catalog name"
+    default: "main"
+
+resources:
+  apps:
+    uc_api_app:
+      name: "chat-box-akunuri"
+      description: "FastAPI REST API over Databricks Unity Catalog"
+      source_code_path: /Users/venkata.akunuri@lockton.com/databricks-app-agent
+      permissions:
+        - level: CAN_USE
+          group_name: data-engineers
+        - level: CAN_MANAGE
+          user_name: ${workspace.current_user.userName}
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://adb-31251195657095.15.azuredatabricks.net
+    variables:
+      warehouse_id: "9bce7c2e69ef5c09"
+      catalog_name: "dev"
+
+  # staging:
+  #   mode: development
+  #   workspace:
+  #     host: https://<your-staging-workspace>.azuredatabricks.net
+  #   variables:
+  #     warehouse_id: "<staging-warehouse-id>"
+  #     catalog_name: "staging"
+
+  # prod:
+  #   mode: production
+  #   workspace:
+  #     host: https://<your-prod-workspace>.azuredatabricks.net
+  #     root_path: /Workspace/Apps/.bundle/${bundle.name}/${bundle.target}
+  #   variables:
+  #     warehouse_id: "<prod-warehouse-id>"
+  #     catalog_name: "prod"
+  #   permissions:
+  #     - level: CAN_MANAGE
+  #       group_name: platform-admins
