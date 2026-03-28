@@ -9,7 +9,7 @@
 
 set -euo pipefail
 
-OWNER="Lockton-Companies"
+OWNER="vijayakunuri1"
 REPO="databricks-app-agent"
 BRANCH="master"
 API="https://api.github.com/repos/${OWNER}/${REPO}/branches/${BRANCH}/protection"

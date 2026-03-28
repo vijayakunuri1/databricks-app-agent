@@ -13,7 +13,7 @@ resources:
     uc_api_app:
       name: "chat-box-akunuri"
       description: "FastAPI REST API over Databricks Unity Catalog"
-      source_code_path: /Users/venkata.akunuri@lockton.com/databricks-app-agent
+      source_code_path: /Users/vijaya/databricks-app-agent
       permissions:
         - level: CAN_USE
           group_name: data-engineers
