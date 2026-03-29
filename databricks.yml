@@ -25,27 +25,7 @@ targets:
     mode: development
     default: true
     workspace:
-      host: https://adb-31251195657095.15.azuredatabricks.net
+      host: https://adb-15.azuredatabricks.net
     variables:
       warehouse_id: "9bce7c2e69ef5c09"
       catalog_name: "dev"
-
-  # staging:
-  #   mode: development
-  #   workspace:
-  #     host: https://<your-staging-workspace>.azuredatabricks.net
-  #   variables:
-  #     warehouse_id: "<staging-warehouse-id>"
-  #     catalog_name: "staging"
-
-  # prod:
-  #   mode: production
-  #   workspace:
-  #     host: https://<your-prod-workspace>.azuredatabricks.net
-  #     root_path: /Workspace/Apps/.bundle/${bundle.name}/${bundle.target}
-  #   variables:
-  #     warehouse_id: "<prod-warehouse-id>"
-  #     catalog_name: "prod"
-  #   permissions:
-  #     - level: CAN_MANAGE
-  #       group_name: platform-admins
